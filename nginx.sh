@@ -8,11 +8,11 @@ echo "Really want to Install? If yes press 1"
 read cond
 if [ $cond == 1 ];
 then
-if [ `cat /etc/os-release | grep ^NAME | grep Ubuntu` ] || [ `cat /etc/os-release | grep ^NAME | grep Debian` ];
+if [ `cat /etc/os-release | grep ^NAME | grep Ubuntu`=='Ubuntu' ] || [ `cat /etc/os-release | grep ^NAME | grep Debian`=='Debian' ];
 then
 	sudo apt update
 	sudo apt install nginx
-elif [`cat /etc/os-release | grep ^NAME | grep Red` ] || [ `cat /etc/os-release | grep ^NAME | grep CentOS` ] || [ `cat /etc/os-release | grep ^NAME | grep Fedora` ];
+elif [`cat /etc/os-release | grep ^NAME | grep Red`=='Red' ] || [ `cat /etc/os-release | grep ^NAME | grep CentOS`=='CentOS' ] || [ `cat /etc/os-release | grep ^NAME | grep Fedora`=='Fedora' ];
 then
 	sudo yum install epel-release
 	sudo yum update
@@ -28,5 +28,6 @@ then
 else
 	echo "Pagal hai kya kyu nahi krna"
 fi
+
 
 
